@@ -17,9 +17,18 @@ function createGrid(rows, cols) {
     };
 };
 
-function changeColor(){
-    this.style.backgroundColor = "red";
+function changeColor(color){
+    this.style.backgroundColor = 'red';
     return false;
+}
+const reset = document.getElementById('reset');
+
+function resetGrid(rows, cols) {
+    for(c = 0; c < (rows *cols); c++){
+        let cell = document.querySelectorAll('div');
+        cell[c].style.backgroundColor = 'white';
+    }
+
 }
 
 
