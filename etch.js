@@ -12,12 +12,21 @@ function createGrid(rows, cols) {
         let cell = document.createElement('div');
         cell.innerText = (c + 1);
         container.appendChild(cell).className = 'grid-item';
-        cell.addEventListener('mouseover', changeColor);
+        /*cell.addEventListener('mouseenter', changeColor, setTimeout);*/
+        cell.addEventListener('mouseenter', function() {
+            cell.style.backgroundColor = "red";
+
+            setTimeout(function() {
+                cell.style.backgroundColor = "";
+
+            }, 500);
+        }, false);
+
 
     };
 };
 
-function changeColor(color){
+function changeColor(){
     this.style.backgroundColor = 'red';
     return false;
 }
